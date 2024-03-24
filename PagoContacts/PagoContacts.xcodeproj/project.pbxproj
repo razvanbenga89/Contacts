@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2A51419A2BB0196B005F21BB /* PagoContactsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141992BB0196B005F21BB /* PagoContactsApp.swift */; };
-		2A51419C2BB0196B005F21BB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A51419B2BB0196B005F21BB /* ContentView.swift */; };
 		2A51419E2BB0196C005F21BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A51419D2BB0196C005F21BB /* Assets.xcassets */; };
 		2A5141A12BB0196C005F21BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5141A02BB0196C005F21BB /* Preview Assets.xcassets */; };
+		2A5141A82BB01AB6005F21BB /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141A72BB01AB6005F21BB /* ContactsView.swift */; };
+		2A5141AA2BB01B86005F21BB /* ContactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141A92BB01B86005F21BB /* ContactsClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A5141962BB0196B005F21BB /* PagoContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PagoContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A5141992BB0196B005F21BB /* PagoContactsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagoContactsApp.swift; sourceTree = "<group>"; };
-		2A51419B2BB0196B005F21BB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2A51419D2BB0196C005F21BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A5141A02BB0196C005F21BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2A5141A72BB01AB6005F21BB /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		2A5141A92BB01B86005F21BB /* ContactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				2A5141992BB0196B005F21BB /* PagoContactsApp.swift */,
-				2A51419B2BB0196B005F21BB /* ContentView.swift */,
+				2A5141A92BB01B86005F21BB /* ContactsClient.swift */,
+				2A5141A72BB01AB6005F21BB /* ContactsView.swift */,
 				2A51419D2BB0196C005F21BB /* Assets.xcassets */,
 				2A51419F2BB0196C005F21BB /* Preview Content */,
 			);
@@ -137,8 +140,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A51419C2BB0196B005F21BB /* ContentView.swift in Sources */,
+				2A5141A82BB01AB6005F21BB /* ContactsView.swift in Sources */,
 				2A51419A2BB0196B005F21BB /* PagoContactsApp.swift in Sources */,
+				2A5141AA2BB01B86005F21BB /* ContactsClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

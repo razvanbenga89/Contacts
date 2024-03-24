@@ -9,9 +9,9 @@ import SwiftUI
 
 @main
 struct PagoContactsApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      ContactsView(model: ContactsModel())
     }
+  }
 }
