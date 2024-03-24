@@ -36,9 +36,11 @@ class ContactsModel {
   
   func load() async {
     do {
-      self.contacts = try await client.getContacts()
+      self.contacts = try await client
+        .getContacts()
+        .filter { $0.status == .active }
+        .sorted { $0.name < $1.name }
     } catch {
-      print(error)
       // handle error
     }
   }

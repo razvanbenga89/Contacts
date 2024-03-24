@@ -35,25 +35,55 @@ extension Contact {
       status: Status(rawValue: dto.status.rawValue) ?? .inactive
     )
   }
+  
+  init?(entity: ContactEntity) {
+    guard let name = entity.name,
+          let email = entity.email,
+          let gender = entity.gender,
+          let status = entity.status else {
+      return nil
+    }
+    
+    self.init(
+      id: Int(entity.contactId),
+      name: name,
+      email: email,
+      gender: Gender(rawValue: gender) ?? .male,
+      status: Status(rawValue: status) ?? .inactive
+    )
+  }
 }
 
 extension ContactsClient {
   static var liveValue: Self {
-    live(networkService: LiveNetworkService.shared)
+    live(
+      networkService: LiveNetworkService.shared,
+      dbService: .liveValue
+    )
   }
   
   static func live(
-    networkService: NetworkService
+    networkService: NetworkService,
+    dbService: ContactsDBService
   ) -> Self {
     Self(
       getContacts: {
+        let cachedContacts = try await dbService.getContacts()
+        
+        guard cachedContacts.isEmpty else {
+          return cachedContacts.compactMap {
+            Contact(entity: $0)
+          }
+        }
+        
         let config = RequestConfig(
           path: { "public/v2/users" }
         )
         
         let contactsDto = try await networkService.request(dataType: [ContactDto].self, configuration: config)
-        let filteredContacts = contactsDto.filter { $0.status == .active }
-        return filteredContacts.map {
+        try await dbService.addContacts(contactsDto)
+        
+        return contactsDto.map {
           Contact(dto: $0)
         }
       }

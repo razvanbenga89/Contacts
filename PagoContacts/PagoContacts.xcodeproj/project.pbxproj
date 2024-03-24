@@ -14,6 +14,9 @@
 		2A5141AA2BB01B86005F21BB /* ContactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141A92BB01B86005F21BB /* ContactsClient.swift */; };
 		2A5141AF2BB03478005F21BB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141AE2BB03478005F21BB /* NetworkService.swift */; };
 		2A5141B32BB03A78005F21BB /* LiveContactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141B22BB03A78005F21BB /* LiveContactsClient.swift */; };
+		2A5141B62BB04250005F21BB /* ContextProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141B52BB04250005F21BB /* ContextProvider.swift */; };
+		2A5141B82BB042A4005F21BB /* ContactsDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141B72BB042A4005F21BB /* ContactsDBService.swift */; };
+		2A5141BB2BB042E4005F21BB /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141B92BB042E4005F21BB /* DataModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		2A5141A92BB01B86005F21BB /* ContactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsClient.swift; sourceTree = "<group>"; };
 		2A5141AE2BB03478005F21BB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		2A5141B22BB03A78005F21BB /* LiveContactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContactsClient.swift; sourceTree = "<group>"; };
+		2A5141B52BB04250005F21BB /* ContextProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextProvider.swift; sourceTree = "<group>"; };
+		2A5141B72BB042A4005F21BB /* ContactsDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsDBService.swift; sourceTree = "<group>"; };
+		2A5141BA2BB042E4005F21BB /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +83,9 @@
 		2A5141AB2BB0342B005F21BB /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2A5141AE2BB03478005F21BB /* NetworkService.swift */,
+				2A5141B42BB04242005F21BB /* LocalDataSource */,
 				2A5141B22BB03A78005F21BB /* LiveContactsClient.swift */,
+				2A5141AE2BB03478005F21BB /* NetworkService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -98,6 +105,16 @@
 				2A5141A72BB01AB6005F21BB /* ContactsView.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2A5141B42BB04242005F21BB /* LocalDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2A5141B92BB042E4005F21BB /* DataModel.xcdatamodeld */,
+				2A5141B52BB04250005F21BB /* ContextProvider.swift */,
+				2A5141B72BB042A4005F21BB /* ContactsDBService.swift */,
+			);
+			path = LocalDataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,9 +187,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A5141B62BB04250005F21BB /* ContextProvider.swift in Sources */,
+				2A5141BB2BB042E4005F21BB /* DataModel.xcdatamodeld in Sources */,
 				2A5141A82BB01AB6005F21BB /* ContactsView.swift in Sources */,
 				2A51419A2BB0196B005F21BB /* PagoContactsApp.swift in Sources */,
 				2A5141AF2BB03478005F21BB /* NetworkService.swift in Sources */,
+				2A5141B82BB042A4005F21BB /* ContactsDBService.swift in Sources */,
 				2A5141AA2BB01B86005F21BB /* ContactsClient.swift in Sources */,
 				2A5141B32BB03A78005F21BB /* LiveContactsClient.swift in Sources */,
 			);
@@ -380,6 +400,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A5141B92BB042E4005F21BB /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A5141BA2BB042E4005F21BB /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 2A5141BA2BB042E4005F21BB /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2A51418E2BB0196B005F21BB /* Project object */;
 }
