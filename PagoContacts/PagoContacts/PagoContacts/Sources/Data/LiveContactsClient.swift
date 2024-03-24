@@ -57,13 +57,13 @@ extension Contact {
 
 extension ContactsClient {
   public static var liveValue: Self {
-    live(
+    build(
       networkService: LiveNetworkService.shared,
       dbService: .liveValue
     )
   }
   
-  public static func live(
+  public static func build(
     networkService: NetworkService,
     dbService: ContactsDBService
   ) -> Self {
