@@ -12,6 +12,8 @@
 		2A5141A12BB0196C005F21BB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A5141A02BB0196C005F21BB /* Preview Assets.xcassets */; };
 		2A5141A82BB01AB6005F21BB /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141A72BB01AB6005F21BB /* ContactsView.swift */; };
 		2A5141AA2BB01B86005F21BB /* ContactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141A92BB01B86005F21BB /* ContactsClient.swift */; };
+		2A5141AF2BB03478005F21BB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141AE2BB03478005F21BB /* NetworkService.swift */; };
+		2A5141B32BB03A78005F21BB /* LiveContactsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5141B22BB03A78005F21BB /* LiveContactsClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		2A5141A02BB0196C005F21BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2A5141A72BB01AB6005F21BB /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		2A5141A92BB01B86005F21BB /* ContactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsClient.swift; sourceTree = "<group>"; };
+		2A5141AE2BB03478005F21BB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		2A5141B22BB03A78005F21BB /* LiveContactsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveContactsClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +57,9 @@
 		2A5141982BB0196B005F21BB /* PagoContacts */ = {
 			isa = PBXGroup;
 			children = (
-				2A5141992BB0196B005F21BB /* PagoContactsApp.swift */,
-				2A5141A92BB01B86005F21BB /* ContactsClient.swift */,
-				2A5141A72BB01AB6005F21BB /* ContactsView.swift */,
+				2A5141AD2BB03462005F21BB /* Presentation */,
+				2A5141AC2BB03430005F21BB /* Domain */,
+				2A5141AB2BB0342B005F21BB /* Data */,
 				2A51419D2BB0196C005F21BB /* Assets.xcassets */,
 				2A51419F2BB0196C005F21BB /* Preview Content */,
 			);
@@ -68,6 +72,32 @@
 				2A5141A02BB0196C005F21BB /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2A5141AB2BB0342B005F21BB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2A5141AE2BB03478005F21BB /* NetworkService.swift */,
+				2A5141B22BB03A78005F21BB /* LiveContactsClient.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2A5141AC2BB03430005F21BB /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2A5141A92BB01B86005F21BB /* ContactsClient.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2A5141AD2BB03462005F21BB /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2A5141992BB0196B005F21BB /* PagoContactsApp.swift */,
+				2A5141A72BB01AB6005F21BB /* ContactsView.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +172,9 @@
 			files = (
 				2A5141A82BB01AB6005F21BB /* ContactsView.swift in Sources */,
 				2A51419A2BB0196B005F21BB /* PagoContactsApp.swift in Sources */,
+				2A5141AF2BB03478005F21BB /* NetworkService.swift in Sources */,
 				2A5141AA2BB01B86005F21BB /* ContactsClient.swift in Sources */,
+				2A5141B32BB03A78005F21BB /* LiveContactsClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
