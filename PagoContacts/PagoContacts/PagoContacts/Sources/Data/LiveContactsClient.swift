@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 struct ContactDto: Decodable {
   enum Gender: String, Decodable {
@@ -55,14 +56,14 @@ extension Contact {
 }
 
 extension ContactsClient {
-  static var liveValue: Self {
+  public static var liveValue: Self {
     live(
       networkService: LiveNetworkService.shared,
       dbService: .liveValue
     )
   }
   
-  static func live(
+  public static func live(
     networkService: NetworkService,
     dbService: ContactsDBService
   ) -> Self {

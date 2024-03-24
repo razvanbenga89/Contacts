@@ -22,7 +22,7 @@ enum HttpMethod: String {
   case delete
 }
 
-struct RequestConfig {
+public struct RequestConfig {
   let httpMethod: () -> HttpMethod
   let path: () -> String
   let headers: () -> [String: String]
@@ -46,7 +46,7 @@ extension RequestConfig {
   }
 }
 
-protocol NetworkService {
+public protocol NetworkService {
   func request<T: Decodable>(dataType: T.Type, configuration: RequestConfig) async throws -> T
 }
 

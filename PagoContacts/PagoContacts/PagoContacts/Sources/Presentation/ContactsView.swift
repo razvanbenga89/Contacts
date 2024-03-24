@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Domain
 
 extension Contact {
   var initials: String {
@@ -24,13 +25,13 @@ extension Contact {
 }
 
 @Observable
-class ContactsModel {
+public class ContactsModel {
   let title: String = "Contacte"
   let sectionTitle: String = "Contactele mele"
   private (set) var contacts: [Contact] = []
   private let client: ContactsClient
   
-  init(client: ContactsClient = .previewValue) {
+  public init(client: ContactsClient = .previewValue) {
     self.client = client
   }
   
@@ -46,10 +47,14 @@ class ContactsModel {
   }
 }
 
-struct ContactsView: View {
+public struct ContactsView: View {
   let model: ContactsModel
+  
+  public init(model: ContactsModel) {
+    self.model = model
+  }
 
-  var body: some View {
+  public var body: some View {
     NavigationStack {
       List {
         Section(model.sectionTitle) {

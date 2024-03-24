@@ -27,7 +27,7 @@ class ContextProvider {
   private let container: NSPersistentContainer
   
   init(name: String = "DataModel", type: ContainerType = .onDisk) throws {
-    guard let modelURL = Bundle.main.url(forResource: name, withExtension: "momd") else {
+    guard let modelURL = Bundle.module.url(forResource: name, withExtension: "momd") else {
       throw DBError.dataModelNotFound
     }
     

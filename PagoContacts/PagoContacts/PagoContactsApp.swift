@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Presentation
+import Data
 
 @main
 struct PagoContactsApp: App {
   var body: some Scene {
     WindowGroup {
-      ContactsView(model: ContactsModel())
+      ContactsView(
+        model: ContactsModel(
+          client: .liveValue
+        )
+      )
     }
   }
 }

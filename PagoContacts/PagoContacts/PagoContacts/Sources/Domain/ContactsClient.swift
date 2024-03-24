@@ -7,27 +7,43 @@
 
 import Foundation
 
-struct Contact {
-  enum Gender: String {
+public struct Contact {
+  public enum Gender: String {
     case male
     case female
   }
   
-  enum Status {
+  public enum Status: String {
     case active
     case inactive
   }
   
-  let id: Int
-  let name: String
-  let email: String
-  var imagePath: String? = "https://picsum.photos/200/200"
-  let gender: Gender
-  let status: Status
+  public let id: Int
+  public let name: String
+  public let email: String
+  public var imagePath: String?
+  public let gender: Gender
+  public let status: Status
+  
+  public init(
+    id: Int,
+    name: String,
+    email: String,
+    imagePath: String? = "https://picsum.photos/200/200",
+    gender: Gender,
+    status: Status
+  ) {
+    self.id = id
+    self.name = name
+    self.email = email
+    self.imagePath = imagePath
+    self.gender = gender
+    self.status = status
+  }
 }
 
 extension Contact {
-  static var mocks: [Contact] {
+  public static var mocks: [Contact] {
     [
       Contact(id: 1, name: "Alina Manolache", email: "alina.manolache@mailinator.com", gender: .female, status: .active),
       Contact(id: 2, name: "Amalia Tudose", email: "amalia.tudose@mailinator.com", gender: .female, status: .active),
@@ -39,12 +55,16 @@ extension Contact {
   }
 }
 
-struct ContactsClient {
-  var getContacts: () async throws -> [Contact]
+public struct ContactsClient {
+  public var getContacts: () async throws -> [Contact]
+  
+  public init(getContacts: @escaping () async throws -> [Contact]) {
+    self.getContacts = getContacts
+  }
 }
 
 extension ContactsClient {
-  static var preview: Self {
+  public static var previewValue: Self {
     Self(
       getContacts: {
         Contact.mocks

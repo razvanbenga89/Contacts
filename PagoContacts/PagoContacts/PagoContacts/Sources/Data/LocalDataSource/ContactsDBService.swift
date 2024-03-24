@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContactsDBService {
+public struct ContactsDBService {
   var addContacts: (_ contacts: [ContactDto]) async throws -> Void
   var getContacts: () async throws -> [ContactEntity]
 }
